@@ -2,10 +2,7 @@ import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
-
-import java.util.List;
 
 
 public class PokerTest {
@@ -40,7 +37,7 @@ public class PokerTest {
         fiveOfHearts.suit = "H";
         fiveOfHearts.value = "5";
 
-        assertTrue( queenOfClubs.isHigherRankThan(fiveOfHearts));
+        assertTrue( queenOfClubs.isHigherValue(fiveOfHearts));
 
     }
 
@@ -56,7 +53,7 @@ public class PokerTest {
         fiveOfHearts.suit = "H";
         fiveOfHearts.value = "5";
 
-        assertFalse(fiveOfHearts.isHigherRankThan(queenOfClubs));
+        assertFalse(fiveOfHearts.isHigherValue(queenOfClubs));
 
     }
 
@@ -71,7 +68,7 @@ public class PokerTest {
         jackOfHearts.suit = "H";
         jackOfHearts.value = "J";
 
-        assertTrue(jackOfHearts.isHigherRankThan(eightOfClubs));
+        assertTrue(jackOfHearts.isHigherValue(eightOfClubs));
 
     }
 
@@ -86,7 +83,7 @@ public class PokerTest {
         fiveOfHearts.suit = "H";
         fiveOfHearts.value = "5";
 
-        assertTrue(eightOfClubs.isHigherRankThan(fiveOfHearts));
+        assertTrue(eightOfClubs.isHigherValue(fiveOfHearts));
 
     }
 
@@ -102,7 +99,7 @@ public class PokerTest {
         fiveOfHearts.suit = "H";
         fiveOfHearts.value = "5";
 
-        assertTrue(aceOfHearts.isHigherRankThan(fiveOfHearts));
+        assertTrue(aceOfHearts.isHigherValue(fiveOfHearts));
 
     }
 
@@ -118,7 +115,68 @@ public class PokerTest {
         jackOfHearts.suit = "H";
         jackOfHearts.value = "J";
 
-        assertTrue(aceOfHearts.isHigherRankThan(jackOfHearts));
+        assertTrue(aceOfHearts.isHigherValue(jackOfHearts));
+
+    }
+
+    @Test
+    public void testThatKingIsHigherThanQueen()
+    {
+        Card queenOfHearts = new Card();
+        queenOfHearts.suit = "H";
+        queenOfHearts.value = "Q";
+
+        Card kingOfHearts = new Card();
+        kingOfHearts.suit = "H";
+        kingOfHearts.value = "K";
+
+        assertFalse(queenOfHearts.isHigherValue(kingOfHearts));
+
+    }
+
+
+    @Test
+    public void testThatKingIsNotHigherThanKing()
+    {
+        Card kingOfDiamonds = new Card();
+        kingOfDiamonds.suit = "D";
+        kingOfDiamonds.value = "K";
+
+        Card kingOfHearts = new Card();
+        kingOfHearts.suit = "H";
+        kingOfHearts.value = "K";
+
+        assertFalse(kingOfHearts.isHigherValue(kingOfHearts));
+
+    }
+
+    @Test
+    public void testThatKingIsEqualValueToKing()
+    {
+        Card kingOfDiamonds = new Card();
+        kingOfDiamonds.suit = "D";
+        kingOfDiamonds.value = "K";
+
+        Card kingOfHearts = new Card();
+        kingOfHearts.suit = "H";
+        kingOfHearts.value = "K";
+
+        assertTrue(kingOfHearts.isSameValue(kingOfDiamonds));
+
+    }
+
+    @Test
+    public void testThatKingIsNotEqualValueToQueen()
+    {
+        Card queenOfDiamonds = new Card();
+        queenOfDiamonds.suit = "D";
+        queenOfDiamonds.value = "Q";
+
+        Card kingOfHearts = new Card();
+        kingOfHearts.suit = "H";
+        kingOfHearts.value = "K";
+
+        assertFalse(kingOfHearts.isSameValue(queenOfDiamonds));
 
     }
 

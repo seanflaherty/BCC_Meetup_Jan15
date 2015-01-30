@@ -23,6 +23,73 @@ public class PokerTest {
         assertEquals(6, 6);
     }
 
+    @Test
+      public void testThatCardObjectsCanBeCreated()
+    {
+        Card card = new Card();
+    }
+
+    @Test
+    public void testThatQueenIsHigherThanFive()
+    {
+        Card queenOfClubs = new Card();
+        queenOfClubs.suit = "C";
+        queenOfClubs.value = "Q";
+
+        Card fiveOfHearts = new Card();
+        fiveOfHearts.suit = "H";
+        fiveOfHearts.value = "5";
+
+        assertTrue( queenOfClubs.isHigherRankThan(fiveOfHearts));
+
+    }
+
+
+    @Test
+    public void testThatFiveIsNotHigherThanQueen()
+    {
+        Card queenOfClubs = new Card();
+        queenOfClubs.suit = "C";
+        queenOfClubs.value = "Q";
+
+        Card fiveOfHearts = new Card();
+        fiveOfHearts.suit = "H";
+        fiveOfHearts.value = "5";
+
+        assertFalse(fiveOfHearts.isHigherRankThan(queenOfClubs));
+
+    }
+
+    @Test
+    public void testThatEightIsNotHigherThanJack()
+    {
+        Card eightOfClubs = new Card();
+        eightOfClubs.suit = "C";
+        eightOfClubs.value = "8";
+
+        Card jackOfHearts = new Card();
+        jackOfHearts.suit = "H";
+        jackOfHearts.value = "J";
+
+        assertTrue(jackOfHearts.isHigherRankThan(eightOfClubs));
+
+    }
+
+    @Test
+    public void testThatEightIsHigherThanFive()
+    {
+        Card eightOfClubs = new Card();
+        eightOfClubs.suit = "C";
+        eightOfClubs.value = "8";
+
+        Card fiveOfHearts = new Card();
+        fiveOfHearts.suit = "H";
+        fiveOfHearts.value = "5";
+
+        assertFalse(eightOfClubs.isHigherRankThan(fiveOfHearts));
+
+    }
+
 
 
 }

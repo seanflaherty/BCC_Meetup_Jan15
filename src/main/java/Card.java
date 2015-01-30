@@ -10,9 +10,20 @@ public class Card {
 
     public boolean isHigherRankThan(Card other) {
 
-        if (  other.value.equals("5")) return true;
-        else if (other.value.equals("8")) return true;
+        char otherVal = other.value.charAt(0);
+        final char thisVal = this.value.charAt(0);
 
-        return false;
+        switch (otherVal) {
+            case 'T' : otherVal = 60;  break;
+            case 'J' : otherVal = 61;  break;
+            case 'Q' : otherVal = 62;  break;
+            case 'K' : otherVal = 63;  break;
+            case 'A' : otherVal = 64;  break;
+        }
+
+        if ( thisVal > otherVal) return true;
+
+    return false;
+
     }
 }

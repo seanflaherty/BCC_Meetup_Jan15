@@ -86,9 +86,43 @@ public class PokerTest {
         fiveOfHearts.suit = "H";
         fiveOfHearts.value = "5";
 
-        assertFalse(eightOfClubs.isHigherRankThan(fiveOfHearts));
+        assertTrue(eightOfClubs.isHigherRankThan(fiveOfHearts));
 
     }
+
+
+    @Test
+     public void testThatAceIsHigherThanFive()
+    {
+        Card aceOfHearts = new Card();
+        aceOfHearts.suit = "H";
+        aceOfHearts.value = "A";
+
+        Card fiveOfHearts = new Card();
+        fiveOfHearts.suit = "H";
+        fiveOfHearts.value = "5";
+
+        assertTrue(aceOfHearts.isHigherRankThan(fiveOfHearts));
+
+    }
+
+
+    @Test
+     public void testThatAceIsHigherThanJack()
+    {
+        Card aceOfHearts = new Card();
+        aceOfHearts.suit = "H";
+        aceOfHearts.value = "A";
+
+        Card jackOfHearts = new Card();
+        jackOfHearts.suit = "H";
+        jackOfHearts.value = "J";
+
+        assertTrue(aceOfHearts.isHigherRankThan(jackOfHearts));
+
+    }
+
+
 
 
 

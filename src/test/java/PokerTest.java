@@ -38,9 +38,7 @@ public class PokerTest {
         fiveOfHearts.value = "5";
 
         assertTrue( queenOfClubs.isHigherValue(fiveOfHearts));
-
     }
-
 
     @Test
     public void testThatFiveIsNotHigherThanQueen()
@@ -69,7 +67,6 @@ public class PokerTest {
         jackOfHearts.value = "J";
 
         assertTrue(jackOfHearts.isHigherValue(eightOfClubs));
-
     }
 
     @Test
@@ -84,7 +81,6 @@ public class PokerTest {
         fiveOfHearts.value = "5";
 
         assertTrue(eightOfClubs.isHigherValue(fiveOfHearts));
-
     }
 
 
@@ -100,7 +96,6 @@ public class PokerTest {
         fiveOfHearts.value = "5";
 
         assertTrue(aceOfHearts.isHigherValue(fiveOfHearts));
-
     }
 
 
@@ -116,7 +111,6 @@ public class PokerTest {
         jackOfHearts.value = "J";
 
         assertTrue(aceOfHearts.isHigherValue(jackOfHearts));
-
     }
 
     @Test
@@ -131,7 +125,6 @@ public class PokerTest {
         kingOfHearts.value = "K";
 
         assertFalse(queenOfHearts.isHigherValue(kingOfHearts));
-
     }
 
 
@@ -147,7 +140,6 @@ public class PokerTest {
         kingOfHearts.value = "K";
 
         assertFalse(kingOfHearts.isHigherValue(kingOfHearts));
-
     }
 
     @Test
@@ -162,7 +154,6 @@ public class PokerTest {
         kingOfHearts.value = "K";
 
         assertTrue(kingOfHearts.isSameValue(kingOfDiamonds));
-
     }
 
     @Test
@@ -177,11 +168,5 @@ public class PokerTest {
         kingOfHearts.value = "K";
 
         assertFalse(kingOfHearts.isSameValue(queenOfDiamonds));
-
     }
-
-
-
-
-
 }
